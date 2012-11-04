@@ -3,53 +3,32 @@ body {
     font-size: 13px;
 }
 
-#demo_dr1, #demo_grid2 {
+#opt_selected {
     margin-top: 20px;
 }
 
-#demo_grid1_test {
-    margin-top: 10px;
-    margin-bottom: 10px;
+/* demo_dropdown 1 ---------------------------------------------------------- */
+.container1 {
+    margin: 20px 30px 10px 30px ;
+    display: inline-block;
 }
 
-/* demo_grid1 --------------------------------------------------------------- */
-.grid1_container {
-    width: 800px;
-    padding: 5px;
-    background: none;
+/* demo_dropdown 2 ---------------------------------------------------------- */
+.container2 {
+    margin: 20px 30px 10px 30px ;
+    display: inline-block;
 }
 
-.grid1_data {
-    width: 100%;
-    padding: 10px;
+/* demo_dropdown 3 ---------------------------------------------------------- */
+.container3 {
+    margin: 20px 30px 10px 30px ;
+    padding: 4px;
+    display: inline-block;
+}
+.launcher3_container {
+    padding: 4px 4px 6px 4px;
 }
 
-.grid1_table_dim {
-    width: 100%;
-}
-
-.grid1_tools {
-    padding: 10px;
-}
-
-.grid1_pagination {
-    padding: 5px;
-}
-
-.grid1_slider {
-    width: 400px;
-    margin: 15px auto;
-}
-
-.grid1_slider_inside {
-    float: left;
-    width: 20%;
-    margin: 6px 15px 1px 15px;
-}
-
-/* demo_grid2 --------------------------------------------------------------- */
-.grid2_container {
-    width: 700px;
-    padding: 5px;
-    background: none;
+.launcher3 {
+    padding: 3px;
 }

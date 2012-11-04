@@ -38,12 +38,53 @@
 
                 var container_id = elem.attr("id");
 
-                // simple validation
-                //validate_input(container_id);
-
                 // bind events
                 //elem.unbind("onCustomEvent1").bind("onCustomEvent1", settings.onCustomEvent1);
 
+                elem.removeClass().addClass(settings.containerClass);
+
+                var launcher_id = settings.launcher_id;
+                var launcher_container_id = settings.launcher_container_id;
+                var menu_id = settings.menu_id;
+                var elem_launcher = $("#" + launcher_id);
+                var elem_launcher_container = $("#" + launcher_container_id);
+                var elem_menu = $("#" + menu_id);
+
+                elem_launcher_container.removeClass(settings.launcherContainerClass).addClass(settings.launcherContainerClass);
+                elem_launcher.removeClass(settings.launcherClass).addClass(settings.launcherClass);
+                elem_menu.removeClass(settings.menuClass).addClass(settings.menuClass);
+
+                elem_menu.menu().hide();
+
+                if(settings.launcher_is_UI_button) {
+                    elem_launcher.button({
+                        text: settings.launcherUIShowText,
+                        icons: {
+                            primary: settings.launcherUIPrimaryIconClass,
+                            secondary: settings.launcherUISecondaryIconClass
+                        }
+                    });
+                }
+
+                elem_launcher.click(function() {
+
+                    if(!settings.launcher_is_UI_button && settings.toggle_launcher) {
+                        elem_launcher.addClass(settings.launcherSelectedClass);
+                    }
+
+                    elem_menu.show().position({
+                        my: settings.my_position,
+                        at: settings.at_position,
+                        of: elem_launcher_container
+                    });
+                    $(document).one("click", function() {
+                        elem_menu.hide();
+                        if(!settings.launcher_is_UI_button && settings.toggle_launcher) {
+                            elem_launcher.removeClass(settings.launcherSelectedClass);
+                        }
+                    });
+                    return false;
+                });
 
             });
 
@@ -56,11 +97,18 @@
          */
         getDefaults: function() {
             var defaults = {
-                opt1: 1,
-                opt2: 'opt2_value',
+                launcherContainerClass: 'launcherContainerClass',
+                launcherClass: 'launcherClass',
+                launcherSelectedClass: 'launcherSelectedClass ui-widget-header ui-corner-all',
+                menuClass: 'menuClass',
+                launcher_is_UI_button: true,
+                launcherUIShowText: true,
+                launcherUIPrimaryIconClass: '',
+                launcherUISecondaryIconClass: 'ui-icon-triangle-1-s',
 
-                onCustomEvent1: function() {
-                }
+                my_position: 'left top',
+                at_position: 'left bottom',
+                toggle_launcher: false
             };
             return defaults;
         },
@@ -128,20 +176,10 @@
 
     /* private methods ------------------------------------------------------ */
 
-    /**
-     * Validate input values
-     * @param container_id
-     */
-    var validate_input = function(container_id) {
-
-    }
-
-
     $.fn.jui_dropdown = function(method) {
 
-        // OPTIONAL
         if(this.size() != 1) {
-            var err_msg = 'You must use this plugin with a unique element (at once)';
+            var err_msg = 'You must use this plugin ' + pluginName + ' with a unique element (at once)';
             this.html('<span style="color: red;">' + 'ERROR: ' + err_msg + '</span>');
             $.error(err_msg);
         }

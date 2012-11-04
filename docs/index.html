@@ -64,7 +64,7 @@
             themes</a>
     </ul>
 
-    <p>Tested with jquery 1.8.2 and jquery-ui 1.8.24
+    <p>Tested with jquery 1.8.2 and jquery-ui >= 1.8.23. <strong>REMARK:</strong> Dividers and form controls inside menu will work with jquery-ui > 1.9
 
     <p>UPCOMING Release 1.00 (?? Oct 2012) Download <a
             href="https://github.com/pontikis/jui_dropdown/zipball/v1.0.0">here</a> (not yet available)
@@ -72,7 +72,7 @@
     <p>CHANGELOG <a
             href="https://github.com/pontikis/jui_dropdown/blob/master/CHANGELOG.md">here</a>
 
-    <p>DEMO <a href="http://pontikis.github.com/jui_dropdown/v1.00/demo/">http://pontikis.github.com/jui_dropdown/v1.10/demo/</a> (not yet available)
+    <p>DEMO <a href="http://pontikis.github.com/jui_dropdown/v1.00/demo/">http://pontikis.github.com/jui_dropdown/v1.00/demo/</a> (not yet available)
 
     <p>
         <small>Syntax highlight using <a
@@ -128,8 +128,20 @@
 <div class="level2">
     <pre class="brush: js">
     $("#element_id").jui_dropdown({
+        launcher_id: 'launcher1',  // REQUIRED
+        launcher_container_id: 'launcher1_container', // REQUIRED
+        menu_id: 'menu1', // REQUIRED
+
+        containerClass: 'containerClass', // OPTIONAL
 
         // DEFAULTS
+        launcherContainerClass: 'launcherContainerClass',
+        launcherClass: 'launcherClass',
+        launcherSelectedClass: 'launcherSelectedClass ui-widget-header ui-corner-all',
+        menuClass: 'menuClass',
+        launcher_is_UI_button: true,
+        toggle_launcher: false
+
     });
     </pre>
 
@@ -204,28 +216,13 @@
     </pre>
 </div>
 
-<!-- Events ---------------------------------------------------------------- -->
-<h2>Events</h2>
-
-<h3>onDisplay</h3>
-
-<div class="level3">
-    <pre class="brush: js">
-    $("#element_id").jui_dropdown({
-        onDisplay: function() {
-        // your code here
-        }
-    });
-    </pre>
-</div>
-
 
 <!-- Screenshots ----------------------------------------------------------- -->
 <h2>Screenshots</h2>
 
 <div class="level2">
-    <img src="../demo/images/sample.png"
-         title="sample.png">
+<!--    <img src="../demo/images/sample.png"
+         title="sample.png">-->
 </div>
 
 

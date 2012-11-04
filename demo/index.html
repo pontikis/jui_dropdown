@@ -4,8 +4,11 @@
     <title>jui_dropdown demo</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
+<!--    <link id="ui-theme" rel="stylesheet" type="text/css"
+          href="../lib/jquery-ui-1.8.23.custom/css/ui-lightness/jquery-ui-1.8.23.custom.css"/>-->
+
     <link id="ui-theme" rel="stylesheet" type="text/css"
-          href="../lib/jquery-ui-1.8.24.custom/css/official/ui-lightness/jquery-ui.css"/>
+          href="../lib/jquery-ui-1.9.1.custom/css/official/ui-lightness/jquery-ui.css"/>
 
     <link rel="stylesheet" href="../jquery.jui_dropdown.css">
 
@@ -15,7 +18,10 @@
     <script src="../lib/jquery-1.8.2/jquery-1.8.2.min.js"
             type="text/javascript"></script>
 
-    <script src="../lib/jquery-ui-1.8.24.custom/js/jquery-ui-1.8.24.custom.min.js"
+<!--    <script src="../lib/jquery-ui-1.8.23.custom/js/jquery-ui-1.8.23.custom.min.js"
+            type="text/javascript"></script>-->
+
+    <script src="../lib/jquery-ui-1.9.1.custom/js/jquery-ui-1.9.1.custom.min.js"
             type="text/javascript"></script>
 
     <script src="../jquery.jui_dropdown.js" type="text/javascript"></script>
@@ -25,11 +31,13 @@
 </head>
 <body>
 
-<p><a style="margin-right: 15px;" href="http://pontikis.github.com">pontikis.github.com</a> Project page: <a
-        href="https://github.com/pontikis/jui_dropdown">https://github.com/pontikis/jui_dropdown</a>
+<p><a style="margin-right: 15px;" href="http://pontikis.github.com">pontikis.github.com</a>
+    Project page: <a
+            href="https://github.com/pontikis/jui_dropdown">https://github.com/pontikis/jui_dropdown</a>
 </p>
 
-<label for="ui-theme-switcher">Select theme:</label> <select id="ui-theme-switcher">
+<label for="ui-theme-switcher">Select theme:</label> <select
+        id="ui-theme-switcher">
     <optgroup label="official jquery-ui themes">
         <option value="../lib/jquery-ui-1.9.1.custom/css/official/ui-lightness/jquery-ui.css">
             ui-lightness
@@ -129,10 +137,49 @@
     </optgroup>
 </select>
 
-<div id="demo_drop1"></div>
+<div id="opt_selected">
+    <span>Selected: </span><span id="result"></span>
+</div>
 
 
-<div id="demo_drop2"></div>
+<div id="demo_drop1">
+    <div id="launcher1_container">
+        <button id="launcher1">Select an action</button>
+    </div>
+    <ul id="menu1">
+        <li id="opt_1.1"><a href="javascript:void(0);">Option-1.1</a></li>
+        <li id="opt_1.2"><a href="javascript:void(0);">Option-1.2</a></li>
+        <li id="opt_1.3" class="divider ui-state-disabled">sdfsdf</li>
+        <li id="opt_1.4"><a href="javascript:void(0);">Option-1.4</a></li>
+        <li id="opt_1.5"><a href="javascript:void(0);">Option-1.5</a></li>
+        <li id="opt_1.6"><a href="javascript:void(0);"><input type="checkbox" id="chk1"><label for="chk1">check it</label></a></li>
+    </ul>
+</div>
+
+
+<div id="demo_drop2">
+    <div id="launcher2_container">
+        <button id="launcher2">Select another</button>
+    </div>
+    <ul id="menu2">
+        <li id="opt_2.1"><a href="javascript:void(0);">Option-2.1</a></li>
+        <li id="opt_2.2"><a href="javascript:void(0);">Option-2.2</a></li>
+        <li id="opt_2.3"><a href="javascript:void(0);">Option-2.3</a></li>
+    </ul>
+</div>
+
+<div id="demo_drop3">
+    <div id="launcher3_container">
+        <a id="launcher3" href="javascript:void(0);">Select another here</a>
+    </div>
+    <ul id="menu3">
+        <li id="opt_3.1"><a href="javascript:void(0);">Option-3.1</a></li>
+        <li id="opt_3.2"><a href="javascript:void(0);">Option-3.2</a></li>
+        <li id="opt_3.3"><a href="javascript:void(0);">Option-3.3</a></li>
+    </ul>
+</div>
+
+<div class="ui-state-default ui-corner-all" style="height: 50px; text-align: center; margin: 0px 30px;">Another div</div>
 
 
 </body>
