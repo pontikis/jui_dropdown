@@ -1,0 +1,55 @@
+body {
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    font-size: 13px;
+}
+
+#demo_dr1, #demo_grid2 {
+    margin-top: 20px;
+}
+
+#demo_grid1_test {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* demo_grid1 --------------------------------------------------------------- */
+.grid1_container {
+    width: 800px;
+    padding: 5px;
+    background: none;
+}
+
+.grid1_data {
+    width: 100%;
+    padding: 10px;
+}
+
+.grid1_table_dim {
+    width: 100%;
+}
+
+.grid1_tools {
+    padding: 10px;
+}
+
+.grid1_pagination {
+    padding: 5px;
+}
+
+.grid1_slider {
+    width: 400px;
+    margin: 15px auto;
+}
+
+.grid1_slider_inside {
+    float: left;
+    width: 20%;
+    margin: 6px 15px 1px 15px;
+}
+
+/* demo_grid2 --------------------------------------------------------------- */
+.grid2_container {
+    width: 700px;
+    padding: 5px;
+    background: none;
+}
