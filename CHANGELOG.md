@@ -1,20 +1,15 @@
-jui_datagrid
+jui_dropdown
 ==============
 
-jQuery datagrid plugin (using jQuery UI)
+jQuery plugin creates a simmple dropdown menu (using jQuery UI)
 
-Project page: [https://github.com/pontikis/jui_datagrid/][github]
-[github]:https://github.com/pontikis/jui_datagrid/
+Project page: [https://github.com/pontikis/jui_dropdown/][github]
+[github]:https://github.com/pontikis/jui_dropdown/
 
 Copyright Christos Pontikis http://pontikis.net
 
 License MIT
 
-UPCOMING Release 1.00 (?? Oct 2012)
+UPCOMING Release 1.00 (?? Nov 2012)
 ---------------------------
-* Diplay tabular data
-* Get data in JSON format using ajax
-* Powerful pagination (based on jui_pagination plugin)
-* CSS based themes compatible with jQuery-UI Theming
-* Preferences dialog available to user
-* Localization
+* Basic functionality
