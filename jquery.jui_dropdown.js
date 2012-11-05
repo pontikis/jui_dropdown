@@ -1,7 +1,9 @@
 /**
  * jquery plugin creates a simple dropdown menu
+ * Requires jquery, jquery-ui, jquery-ui CSS
  * Copyright 2012 Christos Pontikis http://pontikis.net
  * Project page https://github.com/pontikis/jui_dropdown
+ * Release 1.00 (5 Nov 2012)
  * License MIT
  */
 "use strict";
@@ -35,8 +37,6 @@
                     settings = $.extend({}, settings, options);
                 }
                 elem.data(pluginName, settings);
-
-                var container_id = elem.attr("id");
 
                 // bind events
                 elem.unbind("onSelect").bind("onSelect", settings.onSelect);
@@ -110,7 +110,7 @@
          * @return {Object}
          */
         getDefaults: function() {
-            var defaults = {
+            return  {
                 launcherContainerClass: 'launcherContainerClass',
                 launcherClass: 'launcherClass',
                 launcherSelectedClass: 'launcherSelectedClass ui-widget-header ui-corner-all',
@@ -127,7 +127,6 @@
                 onSelect: function() {
                 }
             };
-            return defaults;
         },
 
         /**
@@ -179,10 +178,9 @@
         /**
          * Destroy plugin
          * Usage: $(element).jui_dropdown('destroy');
-         * @param options
          * @return {*|jQuery}
          */
-        destroy: function(options) {
+        destroy: function() {
             return $(this).each(function() {
                 var $this = $(this);
 

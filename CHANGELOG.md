@@ -10,6 +10,6 @@ Copyright Christos Pontikis http://pontikis.net
 
 License MIT
 
-UPCOMING Release 1.00 (?? Nov 2012)
----------------------------
+Release 1.00 (5 Nov 2012)
+-------------------------
 * Basic functionality

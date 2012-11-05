@@ -66,13 +66,13 @@
 
     <p>Tested with jquery 1.8.2 and jquery-ui >= 1.8.23. <strong>REMARK:</strong> Form controls inside menu will work with jquery-ui >= 1.9
 
-    <p>UPCOMING Release 1.00 (?? Oct 2012) Download <a
-            href="https://github.com/pontikis/jui_dropdown/zipball/v1.0.0">here</a> (not yet available)
+    <p>Release 1.00 (5 Nov 2012) Download <a
+            href="https://github.com/pontikis/jui_dropdown/zipball/v1.0.0">here</a>
 
     <p>CHANGELOG <a
             href="https://github.com/pontikis/jui_dropdown/blob/master/CHANGELOG.md">here</a>
 
-    <p>DEMO <a href="http://pontikis.github.com/jui_dropdown/v1.00/demo/">http://pontikis.github.com/jui_dropdown/v1.00/demo/</a> (not yet available)
+    <p>DEMO <a href="http://pontikis.github.com/jui_dropdown/v1.00/demo/">http://pontikis.github.com/jui_dropdown/v1.00/demo/</a>
 
     <p>
         <small>Syntax highlight using <a
@@ -87,7 +87,7 @@
 
 <div class="level2">
     <ul>
-        <li>Creates a dropdown menu
+        <li>Creates a simple dropdown menu
     </ul>
 </div>
 
@@ -116,6 +116,14 @@
 <div class="level3">
     <pre class="brush: js">
     $("#element_id").jui_dropdown({
+        launcher_id: 'launcher1',
+        launcher_container_id: 'launcher1_container',
+        menu_id: 'menu1',
+        containerClass: 'container1',
+        menuClass: 'menu1',
+        onSelect: function(event, data) {
+            $("#result").text('index: ' + data.index + ' (id: ' + data.id + ')');
+        }
     });
     </pre>
 
@@ -140,8 +148,16 @@
         launcherSelectedClass: 'launcherSelectedClass ui-widget-header ui-corner-all',
         menuClass: 'menuClass',
         launcher_is_UI_button: true,
-        toggle_launcher: false
+        launcherUIShowText: true,
+        launcherUIPrimaryIconClass: '',
+        launcherUISecondaryIconClass: 'ui-icon-triangle-1-s',
 
+        my_position: 'left top',
+        at_position: 'left bottom',
+        toggle_launcher: false,
+
+        onSelect: function() {
+        }
     });
     </pre>
 
@@ -216,13 +232,26 @@
     </pre>
 </div>
 
+<h2>Events</h2>
+
+<h3>onSelect</h3>
+
+<div class="level3">
+    <pre class="brush: js">
+    $("#element_id").jui_dropdown({
+        onSelect: function(event, data) {
+            $("#result").text('index: ' + data.index + ' (id: ' + data.id + ')');
+        }
+    });
+    </pre>
+</div>
 
 <!-- Screenshots ----------------------------------------------------------- -->
 <h2>Screenshots</h2>
 
 <div class="level2">
-<!--    <img src="../demo/images/sample.png"
-         title="sample.png">-->
+    <img src="../demo/samples/sample.png"
+         title="jui_dropdown">
 </div>
 
 
