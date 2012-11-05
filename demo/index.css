@@ -13,6 +13,12 @@ body {
     display: inline-block;
 }
 
+.menu1 {
+    position: absolute;
+    width: 200px;
+    margin-top: 3px !important;
+}
+
 /* demo_dropdown 2 ---------------------------------------------------------- */
 .container2 {
     margin: 20px 30px 10px 30px ;
@@ -31,4 +37,17 @@ body {
 
 .launcher3 {
     padding: 3px;
+}
+
+/* demo_dropdown 4 ---------------------------------------------------------- */
+.container4 {
+    margin: 20px 30px 10px 30px ;
+    padding: 4px;
+    display: inline-block;
+}
+
+.menu4 {
+    position: absolute;
+    width: 100px;
+    margin-top: 3px !important;
 }

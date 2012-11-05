@@ -39,7 +39,7 @@
                 var container_id = elem.attr("id");
 
                 // bind events
-                //elem.unbind("onCustomEvent1").bind("onCustomEvent1", settings.onCustomEvent1);
+                elem.unbind("onSelect").bind("onSelect", settings.onSelect);
 
                 elem.removeClass().addClass(settings.containerClass);
 
@@ -54,7 +54,19 @@
                 elem_launcher.removeClass(settings.launcherClass).addClass(settings.launcherClass);
                 elem_menu.removeClass(settings.menuClass).addClass(settings.menuClass);
 
-                elem_menu.menu().hide();
+                if($.ui.version < "1.9.00") {
+                    elem_menu.menu().hide();
+
+                    elem_menu.off('click', "li").on('click', "li", function() {
+                        elem.triggerHandler('onSelect', {index: parseInt($(this).index("#" + menu_id + " li")) + 1, id: $(this).attr("id")})
+                    });
+                } else {
+                    elem_menu.menu({
+                        select: function(event, ui) {
+                            elem.triggerHandler('onSelect', {index: parseInt(ui.item.index("#" + menu_id + " li")) + 1, id: ui.item.attr("id")})
+                        }
+                    }).hide();
+                }
 
                 if(settings.launcher_is_UI_button) {
                     elem_launcher.button({
@@ -66,7 +78,7 @@
                     });
                 }
 
-                elem_launcher.click(function() {
+                elem.off('click', "#" + launcher_id).on('click', "#" + launcher_id, function() {
 
                     if(!settings.launcher_is_UI_button && settings.toggle_launcher) {
                         elem_launcher.addClass(settings.launcherSelectedClass);
@@ -77,12 +89,14 @@
                         at: settings.at_position,
                         of: elem_launcher_container
                     });
+
                     $(document).one("click", function() {
                         elem_menu.hide();
                         if(!settings.launcher_is_UI_button && settings.toggle_launcher) {
                             elem_launcher.removeClass(settings.launcherSelectedClass);
                         }
                     });
+
                     return false;
                 });
 
@@ -108,7 +122,10 @@
 
                 my_position: 'left top',
                 at_position: 'left bottom',
-                toggle_launcher: false
+                toggle_launcher: false,
+
+                onSelect: function() {
+                }
             };
             return defaults;
         },

@@ -18,8 +18,15 @@ Write your own classes in other css file.
 }
 
 .divider {
-    height: 1px;
+    border-bottom-style: solid;
+    border-bottom-width:1px;
+}
+
+.divider1 {
+    height: 2px;
     background: #E5E5E5;
     margin: 5px 1px;
     overflow: hidden;
+    border-bottom-style: solid;
+    border-bottom-width:1px;
 }
