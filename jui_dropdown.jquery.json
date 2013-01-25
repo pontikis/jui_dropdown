@@ -1,0 +1,35 @@
+{
+    "name": "jui_dropdown",
+    "version": "1.0.2",
+    "title": "jQuery dropdown button",
+    "author": {
+        "name": "Christos Pontikis",
+        "email": "christos@pontikis.net",
+        "url": "http://pontikis.net"
+    },
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "https://raw.github.com/pontikis/jui_dropdown/master/MIT_LICENSE"
+        }
+    ],
+    "dependencies": {
+        "jquery": ">=1.6",
+        "jquery-ui": ">=1.8"
+    },
+    "description": "jquery ui simple dropdown button menu (split button). jQuery UI themes compatible.",
+    "homepage": "http://pontikis.net/labs/jui_dropdown",
+    "docs": "http://pontikis.net/labs/jui_dropdown/docs",
+    "demo": "http://pontikis.net/labs/jui_dropdown/demo",
+    "download": "https://github.com/pontikis/jui_dropdown/archive/master.zip",
+    "keywords": [
+        "dropdown",
+        "menu",
+        "dropdown-button",
+        "split-button",
+        "themable",
+        "jqueryui-themable",
+        "ui"
+    ],
+    "bugs": "https://github.com/pontikis/jui_dropdown/issues"
+}
