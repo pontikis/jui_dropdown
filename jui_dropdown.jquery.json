@@ -17,7 +17,7 @@
         "jquery": ">=1.6",
         "jquery-ui": ">=1.8"
     },
-    "description": "jquery ui simple dropdown button menu (split button). jQuery UI themes compatible.",
+    "description": "jQuery plugin, provides a simple dropdown button menu (split button). jQuery UI themes compatible.",
     "homepage": "http://pontikis.net/labs/jui_dropdown",
     "docs": "http://pontikis.net/labs/jui_dropdown/docs",
     "demo": "http://pontikis.net/labs/jui_dropdown/demo",
