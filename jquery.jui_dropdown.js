@@ -1,11 +1,37 @@
 /**
- * jquery plugin creates a simple dropdown menu
- * Requires jquery, jquery-ui, jquery-ui CSS
- * Copyright 2012 Christos Pontikis http://pontikis.net
- * Project page https://github.com/pontikis/jui_dropdown
- * Release 1.01 (5 Nov 2012)
- * License MIT
+ * @fileOverview jQuery plugin, provides a simple dropdown button menu (split button). jQuery UI themes compatible.
+ *               <p>License MIT
+ *               <br />Copyright 2012 Christos Pontikis <a href="http://pontikis.net">http://pontikis.net</a>
+ *               <br />Project page <a href="http://pontikis.net/labs/jui_dropdown">http://pontikis.net/labs/jui_dropdown</a>
+ * @version 1.0.2 (25 Jan 2013)
+ * @author Christos Pontikis http://pontikis.net
+ * @requires jquery (>=1.6), jquery-ui (>=1.8)
  */
+
+/**
+ * See <a href="http://jquery.com">http://jquery.com</a>.
+ * @name $
+ * @class
+ * See the jQuery Library  (<a href="http://jquery.com">http://jquery.com</a>) for full details.  This just
+ * documents the function and classes that are added to jQuery by this plug-in.
+ */
+
+/**
+ * See <a href="http://jquery.com">http://jquery.com</a>
+ * @name fn
+ * @class
+ * See the jQuery Library  (<a href="http://jquery.com">http://jquery.com</a>) for full details.  This just
+ * documents the function and classes that are added to jQuery by this plug-in.
+ * @memberOf $
+ */
+
+/** the foolowing is OPTIONAL in case private methods will be documented  */
+/**
+ * Pseudo-Namespace containing private methods (for documentation purposes)
+ * @name _private_methods
+ * @namespace
+ */
+
 "use strict";
 (function($) {
 
@@ -15,9 +41,7 @@
     var methods = {
 
         /**
-         * @constructor
-         * @param options
-         * @return {*}
+         * @lends $.fn.jui_dropdown
          */
         init: function(options) {
 
@@ -190,11 +214,23 @@
     };
 
     /* private methods ------------------------------------------------------ */
+    /** the foolowing is OPTIONAL in case private methods will be documented  */
 
+    /**
+     * @lends _private_methods
+     */
+
+
+    /**
+     * jui_dropdown
+     *
+     * @class jui_dropdown
+     * @memberOf $.fn
+     */
     $.fn.jui_dropdown = function(method) {
 
         if(this.size() != 1) {
-            var err_msg = 'You must use this plugin ' + pluginName + ' with a unique element (at once)';
+            var err_msg = 'You must use this plugin (' + pluginName + ') with a unique element (at once)';
             this.html('<span style="color: red;">' + 'ERROR: ' + err_msg + '</span>');
             $.error(err_msg);
         }

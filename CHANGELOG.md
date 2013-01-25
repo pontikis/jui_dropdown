@@ -1,15 +1,22 @@
 jui_dropdown
 ==============
 
-jQuery plugin creates a simmple dropdown menu (using jQuery UI)
+jQuery plugin, provides a simple dropdown button menu (split button). jQuery UI themes compatible.
 
-Project page: [https://github.com/pontikis/jui_dropdown/][github]
-[github]:https://github.com/pontikis/jui_dropdown/
+Project page: [https://pontikis.net/labs/jui_dropdown][HOME]
+[HOME]: http://pontikis.net/labs/jui_dropdown
 
-Copyright Christos Pontikis http://pontikis.net
+Copyright Christos Pontikis [http://pontikis.net][copyright]
+[copyright]: http://pontikis.net
 
 License MIT
 
-Release 1.00 (5 Nov 2012)
+
+Release 1.0.2 (25 Jan 2013)
+-------------------------
+* minor changes
+
+
+Release 1.0.0 (5 Nov 2012)
 -------------------------
 * Basic functionality
