@@ -12,6 +12,12 @@ Copyright Christos Pontikis [http://pontikis.net][copyright]
 License MIT
 
 
+Release 1.0.3 (11 Feb 2013)
+-------------------------
+* BUG FIX issue #4 (https://github.com/pontikis/jui_dropdown/issues/4 - jui_dropdown('refresh') doesn't refresh the menu). Thanks to [guykv][guykv]
+[guykv]: https://github.com/guykv
+
+
 Release 1.0.2 (25 Jan 2013)
 -------------------------
 * minor changes

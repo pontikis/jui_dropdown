@@ -8,7 +8,7 @@ Copyright [Christos Pontikis][copyright]
 
 Requires jquery (>=1.6), jquery-ui (>=1.8). Tested with jquery >=1.8.2 and jquery-ui >= 1.8.23 (recommended jquery-ui >= 1.9).
 
-Release: 1.0.2 (25 Jan 2013)
+Release: 1.0.3 (11 Feb 2013)
 
 License [MIT][mit]
 [mit]: https://raw.github.com/pontikis/jui_dropdown/master/MIT_LICENSE
