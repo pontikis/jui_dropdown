@@ -78,8 +78,8 @@
                 elem_launcher.removeClass(settings.launcherClass).addClass(settings.launcherClass);
                 elem_menu.removeClass(settings.menuClass).addClass(settings.menuClass);
 
-                if($.ui.version < "1.9.00") {
-                    elem_menu.menu().hide();
+                if(encode_version($.ui.version) < encode_version('1.9.0')) {
+                    elem_menu.menu().menu('refresh').hide();
 
                     elem_menu.off('click', "li").on('click', "li", function() {
                         elem.triggerHandler('onSelect', {index: parseInt($(this).index("#" + menu_id + " li")) + 1, id: $(this).attr("id")})
@@ -89,7 +89,7 @@
                         select: function(event, ui) {
                             elem.triggerHandler('onSelect', {index: parseInt(ui.item.index("#" + menu_id + " li")) + 1, id: ui.item.attr("id")})
                         }
-                    }).hide();
+                    }).menu('refresh').hide();
                 }
 
                 if(settings.launcher_is_UI_button) {
@@ -220,6 +220,39 @@
      * @lends _private_methods
      */
 
+
+    /**
+     * Add leading zeros
+     * @param {Number} n
+     * @param {Number} totalDigits
+     * @return {String}
+     */
+    var PadDigits = function(n, totalDigits) {
+        var ns = n.toString();
+        var pd = '';
+        if(totalDigits > ns.length) {
+            for(var i = 0; i < (totalDigits - ns.length); i++) {
+                pd += '0';
+            }
+        }
+        return pd + ns;
+    };
+
+
+    /**
+     * Encode version string (e.g 1.8.23 -> 010823, 1.10.0 -> 011000)
+     * @param version
+     * @return {String}
+     */
+    var encode_version = function(version) {
+        var version_encoded = '';
+        var a_version = version.split(".");
+        var a_version_len = a_version.length;
+        for(var i = 0; i < a_version_len; i++) {
+            version_encoded += PadDigits(a_version[i], 2);
+        }
+        return version_encoded;
+    };
 
     /**
      * jui_dropdown
