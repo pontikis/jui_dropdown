@@ -3,7 +3,7 @@
  *               <p>License MIT
  *               <br />Copyright 2012 Christos Pontikis <a href="http://pontikis.net">http://pontikis.net</a>
  *               <br />Project page <a href="http://pontikis.net/labs/jui_dropdown">http://pontikis.net/labs/jui_dropdown</a>
- * @version 1.0.3 (11 Feb 2013)
+ * @version 1.0.4 (15 Apr 2013)
  * @author Christos Pontikis http://pontikis.net
  * @requires jquery (>=1.6), jquery-ui (>=1.8)
  */
@@ -104,6 +104,11 @@
 
                 elem.off('click', "#" + launcher_id).on('click', "#" + launcher_id, function() {
 
+                    var jui_dropdown_current_menu_id = $(document).data("jui_dropdown_current_menu_id");
+                    if(typeof(jui_dropdown_current_menu_id) != 'undefined') {
+                        $("#" + jui_dropdown_current_menu_id).hide();
+                    }
+
                     if(!settings.launcher_is_UI_button && settings.toggle_launcher) {
                         elem_launcher.addClass(settings.launcherSelectedClass);
                     }
@@ -121,7 +126,19 @@
                         }
                     });
 
+                    $(document).data("jui_dropdown_current_menu_id", menu_id);
+
                     return false;
+                });
+
+                elem.off('mouseenter', "#" + launcher_id).on('mouseenter', "#" + launcher_id, function() {
+                    if(settings.launchOnMouseEnter) {
+                        elem_launcher.trigger('click');
+                    }
+                });
+
+                elem.off('mouseleave', "#" + menu_id).on('mouseleave', "#" + menu_id, function() {
+                    elem_menu.hide();
                 });
 
             });
@@ -147,6 +164,8 @@
                 my_position: 'left top',
                 at_position: 'left bottom',
                 toggle_launcher: false,
+
+                launchOnMouseEnter: false,
 
                 onSelect: function() {
                 }
