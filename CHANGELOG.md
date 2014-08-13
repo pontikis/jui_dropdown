@@ -16,7 +16,7 @@ Release 1.0.4 (15 Apr 2013)
 -------------------------
 * Improve hide behaviour: closes #5 (https://github.com/pontikis/jui_dropdown/issues/5 - Menu becomes hidden when mouse leaves its area. Also, menu becomes hidden when another menu is launched.
 
-* MouseOver functionality: closes #6 (https://github.com/pontikis/jui_dropdown/issues/6 - Menu can be launched when mouse enters launcher, instead of click (there is a new setting for this: launchOnMouseEnter (default false)
+* MouseOver functionality: closes #6 (https://github.com/pontikis/jui_dropdown/issues/6 - Manu can be launched when mouse enters launcher, instead of click (there is a new a new setting for this:  launchOnMouseEnter (default false)
 
 
 Release 1.0.3 (11 Feb 2013)
