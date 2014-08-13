@@ -16,3 +16,17 @@ Write your own classes in other css file.
     width: 150px;
     margin-top: 3px !important;
 }
+
+ul.menuClass li.disabled .ui-state-focus
+{
+	margin : 0px !important;
+	border: none;
+	text-decoration: none;
+	background : none;
+	color : gray;
+}
+
+ul.menuClass li.disabled a
+{
+	color : gray;
+}

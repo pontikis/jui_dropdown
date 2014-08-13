@@ -79,16 +79,31 @@
                 elem_launcher.removeClass(settings.launcherClass).addClass(settings.launcherClass);
                 elem_menu.removeClass(settings.menuClass).addClass(settings.menuClass);
 
+				/**
+                 * Fires the onSelect event.  Here we can check whether the element is 'enabled'
+                 * @param {Object} dropdown
+                 * @param {Object} item
+                 */
+                var triggerOnSelect = function (item){
+                    if (item.hasClass("disabled"))
+                        return;
+
+                    elem.triggerHandler('onSelect',{
+						index: parseInt(item.index("#" + menu_id + " li")) + 1,
+						id: item.attr("id")
+					});
+                };
+				
                 if(encode_version($.ui.version) < encode_version('1.9.0')) {
                     elem_menu.menu().menu('refresh').hide();
 
                     elem_menu.off('click', "li").on('click', "li", function() {
-                        elem.triggerHandler('onSelect', {index: parseInt($(this).index("#" + menu_id + " li")) + 1, id: $(this).attr("id")})
+                        triggerOnSelect($(this));
                     });
                 } else {
                     elem_menu.menu({
                         select: function(event, ui) {
-                            elem.triggerHandler('onSelect', {index: parseInt(ui.item.index("#" + menu_id + " li")) + 1, id: ui.item.attr("id")})
+                            triggerOnSelect(ui.item);
                         }
                     }).menu('refresh').hide();
                 }
