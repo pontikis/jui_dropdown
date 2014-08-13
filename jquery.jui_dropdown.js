@@ -3,7 +3,7 @@
  *               <p>License MIT
  *               <br />Copyright 2012 Christos Pontikis <a href="http://pontikis.net">http://pontikis.net</a>
  *               <br />Project page <a href="http://pontikis.net/labs/jui_dropdown">http://pontikis.net/labs/jui_dropdown</a>
- * @version 1.0.4 (15 Apr 2013)
+ * @version 1.0.5 (15 Apr 2013)
  * @author Christos Pontikis http://pontikis.net
  * @requires jquery (>=1.6), jquery-ui (>=1.8)
  */
@@ -64,6 +64,7 @@
 
                 // bind events
                 elem.unbind("onSelect").bind("onSelect", settings.onSelect);
+                elem.unbind("onLaunch").bind("onLaunch", settings.onLaunch);
 
                 elem.removeClass().addClass(settings.containerClass);
 
@@ -104,6 +105,8 @@
 
                 elem.off('click', "#" + launcher_id).on('click', "#" + launcher_id, function() {
 
+                    elem.triggerHandler('onLaunch');
+					
                     var jui_dropdown_current_menu_id = $(document).data("jui_dropdown_current_menu_id");
                     if(typeof(jui_dropdown_current_menu_id) != 'undefined') {
                         $("#" + jui_dropdown_current_menu_id).hide();
