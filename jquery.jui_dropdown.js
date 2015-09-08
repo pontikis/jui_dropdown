@@ -134,10 +134,10 @@
                     //elem.triggerHandler('onLaunch');
                     settings.onLaunch();
 
-                    var jui_dropdown_current_menu_selector = $(document).data("jui_dropdown_current_menu_selector");
-                    if (typeof (jui_dropdown_current_menu_selector) != 'undefined')
+                    var menu = $(document).data("jui_dropdown_current_menu_selector");
+                    if (typeof (menu) != 'undefined')
                     {
-                        elem.find(jui_dropdown_current_menu_selector).hide();
+                        menu.hide();
                     }
 
                     if (!settings.launcher_is_UI_button && settings.toggle_launcher)
@@ -160,7 +160,7 @@
                         }
                     });
 
-                    $(document).data("jui_dropdown_current_menu_selector", menu_selector);
+                    $(document).data("jui_dropdown_current_menu_selector", $(menu_selector));
 
                     return false;
                 });
